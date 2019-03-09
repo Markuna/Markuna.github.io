@@ -1,36 +1,25 @@
 language: node_js
 node_js: stable
 
-cache:
-  directories:
-    - node_modules
-
 # S: Build Lifecycle
 install:
   - npm install
-  - npm install hexo-deployer-git --save
 
-before_install:
-  - npm install -g hexo-cli
+#before_script:
+ # - npm install -g gulp
 
 script:
-  - hexo clean
   - hexo g
 
-#after_script:
-#  - cd ./public
-#  - git init
-#  - git config user.name "markuna" --{GitHub账户名称}
-#  - git config user.email "mar641611372@sina.com" --{Github账户邮箱}
-#  - git add .
-#  - git commit -m "Update docs"
-#  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
-# E: Build LifeCycle
-
 after_script:
-  - sed -i "s/gh_token/${GH_TOKEN}/g" ./_config.yml
-  - cat ./_config.yml
-  - hexo deploy
+  - cd ./public
+  - git init
+  - git config user.name "markuna" --{GitHub账户名称}
+  - git config user.email "mar641611372@sina.com" --{Github账户邮箱}
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+# E: Build LifeCycle
 
 branches:
   only:

@@ -26,4 +26,4 @@ branches:
     - dev
 env:
   global:
-    - GH_REF: git@github.com:Markuna/Markuna.github.io.git --{仓库地址}
+    - GH_REF: github.com/Markuna/Markuna.github.io.git

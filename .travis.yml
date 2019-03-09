@@ -23,7 +23,7 @@ after_script:
 
 branches:
   only:
-    - blog-source --{Hexo源码分支名称}
+    - dev --{Hexo源码分支名称}
 env:
  global:
    - GH_REF: git@github.com:Markuna/Markuna.github.io.git --{仓库地址}
